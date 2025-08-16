@@ -1,59 +1,86 @@
-# EventManagement
+ Final Project Structure (before zipping):
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+event-management/
+│
+├── src/
+│   ├── app/
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── components/
+│   │   │   └── event-list/
+│   │   │       ├── event-list.component.ts
+│   │   │       ├── event-list.component.html
+│   │   │       └── event-list.component.css
+│   │   ├── directives/
+│   │   │   └── highlight.directive.ts
+│   │   └── pipes/
+│   │       └── price-format.pipe.ts
+│   ├── main.ts
+│   └── styles.css
+│
+├── README.md
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── .gitignore
+└── (screenshots folder)/
+    ├── list-display.png
+    ├── formatted-prices.png
+    └── highlighted-events.png
 
-## Development server
 
-To start a local development server, run:
+# Event Management Portal
+
+## Description
+A Single Page Application (SPA) built with Angular 18+ Standalone Components.  
+Features:
+- Displays a list of events in a table
+- Formats ticket prices using a custom pipe (`PriceFormatPipe`)
+- Highlights expensive events (price > ₹2000) using a custom directive (`HighlightDirective`)
+- Formats event dates using Angular's built-in DatePipe
+- Includes fade-in animation for table rows
+
+---
+
+## Installation & Run Steps
 
 ```bash
+# Install Angular CLI if not installed
+npm install -g @angular/cli
+
+# Navigate into project folder
+cd event-management
+
+# Install dependencies
+npm install
+
+# Run the development server
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Open in browser:
+# http://localhost:4200
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+Implemented Features
+1.Event List Display
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+-> Implemented in EventListComponent using *ngFor
 
-```bash
-ng generate --help
-```
+-> Displays Name, Date, Price, and Category
 
-## Building
+2.Custom Pipe - PriceFormatPipe
 
-To build the project run:
+-> Formats ticket prices to ₹ with comma separators and 2 decimal places
 
-```bash
-ng build
-```
+3.Custom Directive - HighlightDirective
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+-> Highlights expensive events (> ₹2000) with a light gold background
 
-## Running unit tests
+4.Date Formatting
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+-> Uses Angular's date pipe to display dd-MMM-yyyy format
 
-```bash
-ng test
-```
+## Screen Shot
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![Event List Display](<Screenshot 2025-08-12 195259.png>)
